@@ -1,22 +1,18 @@
-/*
-Ejercicio 4, refactoriza el código
-Dado los siguientes códigos, refactorízalos como consideres, si consideras que está bien, explica el motivo.
-*/
 
 //Primer código
 //Tenemos una función que saca el nombre completo del usuario con el nombre y apellido
 var usuario = {
-  nombre: "Pedro",
-  apellido: "Sánchez",
-  edad: 45,
-  profesion: "Barro man",
+  name: "Pedro",
+  lastName: "Sánchez",
+  age: 45,
+  profession: "Barro man",
 };
 
 console.log(nombreUsuario(usuario));
 
 function nombreUsuario(user) {
-  const {nombre, apellido}=usuario
-  const nombrCompleto = "Me llamo " + nombre + " " + apellido;
+  const {name, lastName}=usuario
+  const nombrCompleto = "Me llamo " + name + " " + lastName;
 
   return nombrCompleto;
 }
@@ -24,7 +20,7 @@ function nombreUsuario(user) {
 
 //Segundo código
 //Tenemos una función que calcula el salario anual y el nombre del usuario
-const user1 = {
+const secondUser = {
   name: "Pedro",
   last: "Sánchez",
   age: 45,
@@ -32,19 +28,23 @@ const user1 = {
   profesion: "Barro man",
 };
 
-function userData(user1) {
- // const annualSalary = user1.salary * 12;
-//const fullName = `${user1.name} ${user1.last}`;
-const {name, last, salary}=user1
-  return `Me llamo ${name}  y cobro ${salary*12}€ al año`;
+
+function anualSalary(salary){
+return salary * 12;
 }
 
-console.log(userData(user1));
+function messageUser(name, last, anualSalary){
+return `me llamo ${name} ${last} y cobro ${anualSalary} € anuales.`
+
+}
+console.log(messageUser(secondUser.name, secondUser.last, anualSalary(secondUser.salary)))
+
 
 
 //Tercer código
 //Si el usuario tiene 30 años y no es español, recibirá una ayuda del gobierno de 2000€
-
+const requiredAge = 30;
+const nationality = "España";
 
 const user = {
   name: "Álvaro",
@@ -54,6 +54,6 @@ const user = {
 };
 
 function esExtrangero(user) {
-  return (user.age === 30 && user.nationality !== "España") ? "apto" : "no apto";
+  return (user.age === requiredAge && user.nationality !== nationality) ? "apto" : "no apto";
 }
-console.log(esExtrangero(user)); 
+console.log (esExtrangero (user)); 
