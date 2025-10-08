@@ -47,6 +47,7 @@ const requiredAge = 30;
 const nationality = "España";
 
 const user = {
+
   name: "Álvaro",
   last: "Morón",
   age: 30,
@@ -54,6 +55,6 @@ const user = {
 };
 
 function esExtrangero(user) {
-  return (user.age === requiredAge && user.nationality !== nationality) ? "apto" : "no apto";
+  return (user.age === requiredAge && user.nationality !== nationality.toLocaleLowerCase()) ? "apto" : "no apto";
 }
 console.log (esExtrangero (user)); 
